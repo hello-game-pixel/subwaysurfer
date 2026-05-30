@@ -36,6 +36,13 @@
 </head>
 
 <body>
+	<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log("Offline mode ready!"))
+      .catch(err => console.error("Offline setup failed", err));
+  }
+</script>
     <script src="./master-loader.js"></script>
 	
 	    <script type="text/javascript">
